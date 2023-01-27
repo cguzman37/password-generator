@@ -1,19 +1,31 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var specialCharacters = ['!','@','#','$','%','&','*','(',')','-','_','+','=']
+var lowerCaseletters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var upperCaseletters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
 function generatePassword () {
   //prompt ("please select password length between 8 and 128 characters");
   // prompt ("please select password length between 8 and 128 characters");
   var userChoice = prompt("please select password length between 8 and 128 characters");
+  var upperCaseletters = prompt ("Would you like to use Upper case letters?")
+ var lowerCaseletters = prompt ("Would you like to use Lower case letters?")
+ var specialCharacters = prompt ("Would you like to use special characters?")
  
  if  (userChoice < 8 || userChoice > 128){
   alert("Password doesn't meet criteria")
- } else {
-  prompt("Do you want to use numeric characters?")
-  if (userChoice=) {
-    
+ }
+//   else {
+//   prompt("Do you want to use numeric characters?")
+  if (!upperCaseletters && !lowerCaseletters && !numericCharacters && !specialCharacters){
+    alert("Please select at least one")
+    return "Password doesn't meet criteria"
   }
+    
+  
+    
+  
  }
 
 
