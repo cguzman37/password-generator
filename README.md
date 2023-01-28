@@ -12,6 +12,6 @@ https://cguzman37.github.io/password-generator/
 # Resources
 
 Worked in study group with Tim Smith, Ahmad Bustami, and Jacob Mulcahy
-Sam TA's psuedo code is in javascript
+Sam TA's psuedo code is in javascript bottom
 
 
