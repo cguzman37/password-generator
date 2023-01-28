@@ -1,17 +1,17 @@
 # password-generator
 
-#Description
+# Description
 This website was created to help users create random passwords.
 
-#Link
+# Link
 https://cguzman37.github.io/password-generator/
 
-#Image
+# Image
+./assets/images/Screenshot 2023-01-27 at 7.49.38 PM.png alt
 
-./assets/
+# Resources
 
-#Resources
 Worked in study group with Tim Smith, Ahmad Bustami, and Jacob Mulcahy
-Sam TA is psuedo code is in javascript
+Sam TA's psuedo code is in javascript
 
 
