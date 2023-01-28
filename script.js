@@ -1,36 +1,60 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+//these are the array for each character type
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialCharacters = ['!','@','#','$','%','&','*','(',')','-','_','+','=']
 var lowerCaseletters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var upperCaseletters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
 function generatePassword () {
-  //prompt ("please select password length between 8 and 128 characters");
-  // prompt ("please select password length between 8 and 128 characters");
+//user needs to meet criteria in order to move forward, if not they will be rejected and need to restart
   var userChoice = prompt("please select password length between 8 and 128 characters");
-  var upperCaseletters = prompt ("Would you like to use Upper case letters?")
- var lowerCaseletters = prompt ("Would you like to use Lower case letters?")
- var specialCharacters = prompt ("Would you like to use special characters?")
  
  if  (userChoice < 8 || userChoice > 128){
   alert("Password doesn't meet criteria")
  }
-//   else {
-//   prompt("Do you want to use numeric characters?")
+//User needs to confirm what they want to add to password criteria
+  else {
+    var hasupperCase = confirm("Would you like to use Upper case letters?")
+    var haslowerCase = confirm("Would you like to use Lower case letters?")
+    var hasspecial = confirm("Would you like to use special characters?")
+  var hasnumeric = confirm("Do you want to use numeric characters?")
+//if user does not select any of the criteria then they will be reminded to select one
   if (!upperCaseletters && !lowerCaseletters && !numericCharacters && !specialCharacters){
     alert("Please select at least one")
-    return "Password doesn't meet criteria"
+    generatePassword();
+    // return "Password doesn't meet criteria";
+
   }
-    
+  //we need to have empty arrays inside functions in case user is repeating use
+  else { 
+    var possibleChars =[];
+    var result= [];
+// this is in case user chooses their preference for the password to then be generated
+    if(hasnumeric){
+      possibleChars = possibleChars.concat(numericCharacters);
+    }
   
-    
-  
- }
+  if(hasspecial){
+    possibleChars = possibleChars.concat(specialCharacters);
+  }
+  if(haslowerCase){
+    possibleChars = possibleChars.concat(lowerCaseletters);
+  }
+  if(hasupperCase){
+    possibleChars = possibleChars.concat(upperCaseletters);
+  }
 
+for(var i = 0; i < userChoice; i++){
+  var randomNumber = Math.floor(Math.random() * possibleChars.length);
+  result [i] = possibleChars[randomNumber]
+}
+  }
+var finalpass = result.join("");
+return finalpass;
 
+}
  return ("my password");
-
 }
 
 // Write password to the #password input
@@ -38,38 +62,11 @@ function writePassword() {
   //alert("working");
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
